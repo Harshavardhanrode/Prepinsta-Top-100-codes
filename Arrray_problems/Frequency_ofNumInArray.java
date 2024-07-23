@@ -46,9 +46,11 @@ public class Frequency_ofNumInArray {
         for(int i=0;i<arr.length;i++){
             if(arr[i]!= visited){
                 if(i!=0)
-                    System.out.println(visited+":"+count);
+                    System.out.println(visited+":"+count); // for first number
                 visited=arr[i];
                 count = 1;
+              if(arr.length-1==i)
+                    System.out.println(visited+":"+count);  // for last number
             }
             else{count++;}
         }
