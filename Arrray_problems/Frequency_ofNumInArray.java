@@ -33,11 +33,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Frequency_ofNumInArray {
+    static int distinct;
     public static void main(String[]args){
         int arr[]= {-2,90,10,20,10,20,10,30,10,10};
         Frequency_ofNumInArray n1 = new Frequency_ofNumInArray();
         Arrays.sort(arr);
         n1.Findfrequency(arr);
+        System.out.println("distinct numbers:"+distinct);
     }
 
     public  void Findfrequency(int[] arr){
@@ -45,12 +47,14 @@ public class Frequency_ofNumInArray {
 
         for(int i=0;i<arr.length;i++){
             if(arr[i]!= visited){
+                distinct++;
                 if(i!=0)
-                    System.out.println(visited+":"+count); // for first number
+                    System.out.println(visited+":"+count);
                 visited=arr[i];
                 count = 1;
-              if(arr.length-1==i)
-                    System.out.println(visited+":"+count);  // for last number
+                if(arr.length-1==i)
+                    System.out.println(visited+":"+count);
+
             }
             else{count++;}
         }
