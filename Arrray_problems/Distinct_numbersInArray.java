@@ -1,32 +1,46 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class Distinct_numbersInArray {
-    static int distinct;
-    public static void main(String[]args){
-        int arr[]= {-2,90,10,20,10,20,10,30,10,10};
-        Distinct_numbersInArray n1 = new Distinct_numbersInArray();
+public class xyz {
+
+    public static void main(String[] args) {
+        int arr[] = {1,1,-2,2, 2, 3, 4,4,4, 5,5,-3};
         Arrays.sort(arr);
-        n1.Findfrequency(arr);
-        System.out.println("distinct numbers:"+distinct);
+        elementFrequency(arr);
+
+                
+
     }
 
-    public  void Findfrequency(int[] arr){
-        int visited =0,count=0;
+    private static void elementFrequency(int[] arr) {
+        int count = 1;
+            int distinct=0;
+        for(int i=1;i<arr.length;i++) {
+            
+            if(arr[i]==arr[i-1]){
+                count++;
 
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]!= visited){
+            }else{
+                System.out.println(arr[i-1] + " occurs " + count );
                 distinct++;
-                if(i!=0)
-                    System.out.println(visited+":"+count);
-                visited=arr[i];
                 count = 1;
-                if(arr.length-1==i)
-                    System.out.println(visited+":"+count);
-
             }
-            else{count++;}
-        }
 
+            
+            }
+        System.out.println(arr[arr.length-1] + " occurs " + count);
+        distinct++;
+        System.out.println("Total distinct elements: " + distinct);
+            
     }
+        
+    }
+
     
-}
+    
+
+
+   
+     
+
